@@ -1,0 +1,54 @@
+<div class="col-6 mx-auto">
+    <div class="card m-5">
+        <div class="card-body">
+            <div class="col-6 ms-auto mb-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" [(ngModel)]="keyword">
+                    <button class="btn btn-outline-success input-group-text" (click)="searchProduct()"><span ><i class="bi bi-search"></i></span></button>
+                </div>                
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Price</th>
+                        <th>Checked</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>
+                            <button (click)="handleChecked(product)" class="btn btn-outline-success">
+                                <i [class]="product.checked ?  'bi bi-check2-circle' : 'bi bi-circle'"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button (click)="handleDeleteProduct(product)" class="btn btn-outline-danger" >
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+               
+                    </tr>
+
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item" >
+                    <button [class]="pageCurrent == 1 ?'page-link disabled':'page-link '" (click)="PreviousPage()" >Previous</button>
+                  </li>
+                  <li class="page-item" *ngFor="let item of [].constructor(numberpages+1) ; let i = index" >
+                    <button [ngClass]="pageCurrent == i + 1 ? 'page-link active' : 'page-link'" (click)="handleClickPage(i+1)">{{i + 1}}</button>
+                  </li>
+                  <li class="page-item">
+                        <button tabindex="1" [class]="pageCurrent != numberpages+1 ? 'page-link' : 'page-link disabled'" (click)="nextPage()">Next</button>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+    </div>
+</div>
+
