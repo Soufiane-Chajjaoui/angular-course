@@ -3,19 +3,19 @@
     {
       "name": "sssssss",
       "price": "sssssssssss",
-      "checked": false,
+      "checked": true,
       "id": 1
     },
     {
       "name": "yyyyyyyy",
       "price": "yyyyyyyy",
-      "checked": true,
+      "checked": false,
       "id": 2
     },
     {
       "name": "ddddd",
       "price": "dddddd",
-      "checked": true,
+      "checked": false,
       "id": 3
     },
     {
@@ -23,12 +23,6 @@
       "price": "dddddd",
       "checked": true,
       "id": 4
-    },
-    {
-      "name": "ddddd",
-      "price": "dddddd",
-      "checked": true,
-      "id": 5
     },
     {
       "name": "ddddd",
@@ -197,18 +191,6 @@
       "price": "ddwwwwwwwwwwwwwwwwwwww",
       "checked": true,
       "id": 34
-    },
-    {
-      "name": "s",
-      "price": "ddwwwwwwwwwwwwwwwwwwww",
-      "checked": true,
-      "id": 35
-    },
-    {
-      "name": "sdddddddd",
-      "price": "ddwwwwwwwwwwwwwwwwwwww",
-      "checked": true,
-      "id": 36
     }
   ]
 }

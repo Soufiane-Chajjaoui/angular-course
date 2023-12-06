@@ -2,20 +2,22 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../Model/Product';
 import { Observable } from 'rxjs';
+import  {Router} from '@angular/router';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit , OnDestroy{ 
+export class ProductsComponent implements OnInit , OnDestroy{
+
   public keyword! : string;
   public products: Array<Product> = [];
   public pageSize : number = 4 ;
   public pageCurrent : number = 1 ;
   public numberpages! : number ;
   public totalProducts! : number ;
-  constructor(private productService : ProductsService){}
+  constructor(private productService : ProductsService , private router : Router){}
 
 
   ngOnDestroy(): void {
@@ -82,7 +84,10 @@ export class ProductsComponent implements OnInit , OnDestroy{
   }
   PreviousPage() : void {
     this.getProducts(this.pageCurrent--);
-
   }
+
+  handleEdit(product : Product) : void {
+     this.router.navigateByUrl(`/EditProduct/${ product.id}`);
+    } 
 
 }

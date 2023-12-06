@@ -24,5 +24,11 @@ export class ProductsService {
   searchProduct(query : string) : Observable<Array<Product>> {
     return this.http.get<Array<Product>>(`http://localhost:8080/products?name_like=${query}`) ;
   }
+
+
+  ProductByID(id : number)  : Observable<Product> {
+    return this.http.get<Product>(`http://localhost:8080/products/${id}`) ;
+  }
+
   
 }
