@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../Model/Product';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { LoadingAppService } from '../services/loading-app.service';
 
 @Component({
   selector: 'app-edit-product',
@@ -12,12 +13,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class EditProductComponent implements OnInit{
 
 
-  public productID : number | undefined ;
+  public productID? : number  ;
   public product : Product | undefined ;
   productFormGroup! : FormGroup  ;
 
-  constructor(private  activatedRoute : ActivatedRoute , private productService : ProductsService , private fb : FormBuilder){
-    
+  constructor(private  activatedRoute : ActivatedRoute ,
+     private productService : ProductsService ,
+      private fb : FormBuilder ,
+      public isloadingService : LoadingAppService){
   }
   ngOnInit(): void {
     this.productID = this.activatedRoute.snapshot.params['id'] ;
@@ -38,7 +41,12 @@ export class EditProductComponent implements OnInit{
     })
   }
   EditProduct() {
-    throw new Error('Method not implemented.');
+     let prod : Product = this.productFormGroup.value ;
+     this.productService.updateProductComplete(prod).subscribe({
+      next : data => {
+        alert(JSON.stringify(data)) ;
+      }
+     })
     }
      
 }

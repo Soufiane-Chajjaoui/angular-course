@@ -3,8 +3,13 @@
         <div class="card-header">
             Product ID = {{productID}}
         </div>
-        <div class="card-body">
-            <div class="col-md-6">
+        <div class="card-body" *ngIf="isloadingService.isLoading$ | async">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status"></div>
+            </div>
+        </div>
+        <div class="card-body" *ngIf="productFormGroup">
+            <div class="col">
                 <form [formGroup]="productFormGroup" (ngSubmit)="EditProduct()">
                     <div class="form-group">
                         <div class="mb-3">
@@ -13,7 +18,14 @@
                         </div>    
                         <div class="mb-3">
                             <label class="form-label">Montant</label>
-                            <input class="form-control" formControlName="montant">
+                            <input class="form-control" formControlName="price">
+                        </div>
+                        <div class="form-check form-switch mt-3">
+                            <label for="switchText" class="form-check-label">Check</label>
+                            <input type="checkbox" class="form-check-input" id="switchText" formControlName="checked">
+                        </div>
+                        <div class="d-flex justify-content-center mt-5">
+                            <button class="btn btn-outline-primary" type="submit" >Ajout</button>
                         </div>
                     </div>
                 </form>
