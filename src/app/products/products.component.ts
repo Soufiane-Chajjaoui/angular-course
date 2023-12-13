@@ -91,7 +91,7 @@ export class ProductsComponent implements OnInit , OnDestroy{
   }
 
   handleEdit(product : Product) : void {
-     this.router.navigateByUrl(`/EditProduct/${ product.id}`);
+     this.router.navigateByUrl(`/admin/EditProduct/${product.id}`);
     } 
 
 }

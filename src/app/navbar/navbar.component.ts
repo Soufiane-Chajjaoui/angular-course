@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
     actions : Array<any> = [
-      { title : "Home" , route : "/home"},
-      { title : "Products" , route : "/products"},
-      { title : "New Product" , route : "/NewProduct"}
+      { title : "Home" , route : "/admin/home"},
+      { title : "Products" , route : "/admin/products"},
+      { title : "New Product" , route : "/admin/NewProduct"}
     ];
     CurrentAction : any ;
     setCurrentAction(action : any) : void{

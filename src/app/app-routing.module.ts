@@ -4,20 +4,33 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { LoginAppComponent } from './login-app/login-app.component';
+import { AdminCatalogComponent } from './admin-catalog/admin-catalog.component';
 
 const routes: Routes = [
   {
-    path :"home", component : HomeComponentComponent
-  },
-  { 
-    path :"products", component : ProductsComponent
+    path :"login", component : LoginAppComponent
   },
   {
-    path: "NewProduct", component : NewProductComponent
+    path : "" , redirectTo : "/login",  pathMatch : 'full'
   },
   {
-    path : "EditProduct/:id", component : EditProductComponent
-  }
+    path : "admin" , component: AdminCatalogComponent , children : [
+        {
+          path :"home", component : HomeComponentComponent
+        },
+        {
+          path :"products", component : ProductsComponent
+        },
+        {
+          path: "NewProduct", component : NewProductComponent
+        },
+        {
+          path : "EditProduct/:id", component : EditProductComponent
+        }
+    ]
+  },
+
 ];
 
 @NgModule({
