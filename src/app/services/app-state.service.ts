@@ -13,5 +13,17 @@ export class AppStateService {
      totalProducts : 1 ,
      status : ""
   }
+
+  public AuthStatus : any = {
+    isAuthenticated : false ,
+    username : "",
+    roles : undefined ,
+    token : undefined
+
+  }
   constructor() { }
+
+  public setAuthState(state : any) {
+    this.AuthStatus = {...this.AuthStatus , ...state};
+  }
 }

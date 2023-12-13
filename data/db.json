@@ -6,7 +6,6 @@
       "roles" : ["USER" , "ADMIN"],
       "token" :
        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJub21fdXRpbGlzYXRldXIiLCJlbWFpbCI6ImV4ZW1wbGVAZW1haWwuY29tIiwiZXhwIjoxNjk2Mjc1MjAwLCJyb2xlcyI6WyJBRE1JTiIsIlVTRVIiXX0.orubuimuab0EOPJEISoV0d2Cw8yxWgqvBMB3ISEMSZg"
-
     }
   ],
   "products": [
