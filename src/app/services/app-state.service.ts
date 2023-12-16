@@ -14,9 +14,14 @@ export class AppStateService {
      status : ""
   }
 
+  public ErrorState : any = {
+    message : ""
+  }
+
   public AuthStatus : any = {
     isAuthenticated : false ,
     username : "",
+    email : "",
     roles : undefined ,
     token : undefined
 
